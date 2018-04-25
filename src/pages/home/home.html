@@ -1,26 +1,27 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Welcome to NL International</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to NL International</h2>
-  <hr>
-  <ion-header>
-    <ion-navbar>
-      <ion-title>
-        Ionic API.AI Chatbot
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
+  <br><br><br><br><hr>
   
+  <ion-fab left top>
+    <button ion-fab color="secondary"><ion-icon name="arrow-dropright"></ion-icon></button>
+    <ion-fab-list side="right">
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
   <ion-content padding>
-  
     <input ion-text type="text" [(ngModel)]="question">
   
     <button ion-button (click)="ask(question)">
-      Ask
+      ASK ME 
     </button>
   
     <div>
