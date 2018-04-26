@@ -8,6 +8,7 @@ import { LoginPage } from '../login/login';
 })
 export class HomePage {
 
+
   constructor(public navCtrl: NavController) {
 
   }
@@ -15,4 +16,5 @@ export class HomePage {
   login() {
     this.navCtrl.push(LoginPage);
   }
+
 }

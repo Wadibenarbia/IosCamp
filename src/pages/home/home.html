@@ -5,25 +5,17 @@
 </ion-header>
 
 <ion-content padding>
-  <br><br><br><br><hr>
-  
-  <ion-fab left top>
-    <button ion-fab color="secondary"><ion-icon name="arrow-dropright"></ion-icon></button>
-    <ion-fab-list side="right">
-      <button ion-button (click)="login()">Sign</button>
-    </ion-fab-list>
-  </ion-fab>
 
-  <ion-content padding>
-    <input ion-text type="text" [(ngModel)]="question">
-  
-    <button ion-button (click)="ask(question)">
-      ASK ME 
-    </button>
-  
-    <div>
-      {{answer}}
-    </div>
-  
-  </ion-content>
+     <ion-fab top right edge>
+        <button ion-fab style="background-color:#ef6c00" mini><ion-icon name="add"></ion-icon></button>
+        <ion-fab-list>
+            <button ion-button style="background-color:#ef6c00" (click)="login()">Sign In</button>
+        </ion-fab-list>
+     </ion-fab>
+      
+  <iframe
+  width=100%
+  height=100%
+  src="https://console.dialogflow.com/api-client/demo/embedded/d3cbe6f8-3054-480d-9c22-2ab03220783c">
+  </iframe>
 </ion-content>
