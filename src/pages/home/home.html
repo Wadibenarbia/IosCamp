@@ -1,16 +1,13 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Welcome to NL</ion-title>
-  </ion-navbar>
+<ion-header class="header">
+   <img src="../../assets/imgs/nutriBot_logoPNG.png" class="logo">
 </ion-header>
 
 <ion-content>
-
      <ion-fab top right edge>
-        <button ion-fab style="background-color:#ef6c00" mini><ion-icon name="menu"></ion-icon></button>
+        <button ion-fab mini class="btn-menu"><ion-icon name="menu"></ion-icon></button>
         <ion-fab-list>
             <div>
-              <button ion-button class="slidemenu" style="background-color:#ef6c00" (click)="login()">Sign In</button>
+              <button ion-button class="slidemenu" (click)="login()">Sign In</button>
             </div>
         </ion-fab-list>
      </ion-fab>
