@@ -28,8 +28,11 @@ ion-fab[top][edge] {
   padding: 0 3.1em;
 }
 
-.Chatbot {
-  margin-top: -125px;
+.scroll-content{
+overflow-y: hidden;
+}
+#bot {
+  margin-top: -105px;
   width: 100%;
   height: calc( 100% + 105px );
 }

@@ -7,7 +7,7 @@
 <ion-content>
 
      <ion-fab top right edge>
-        <button ion-fab style="background-color:#ef6c00" mini><ion-icon name="add"></ion-icon></button>
+        <button ion-fab style="background-color:#ef6c00" mini><ion-icon name="menu"></ion-icon></button>
         <ion-fab-list>
             <div>
               <button ion-button class="slidemenu" style="background-color:#ef6c00" (click)="login()">Sign In</button>
@@ -15,9 +15,7 @@
         </ion-fab-list>
      </ion-fab>
 
-  <div class="Chatbot">
-    <iframe
+    <iframe id="bot"
      src="https://console.dialogflow.com/api-client/demo/embedded/d3cbe6f8-3054-480d-9c22-2ab03220783c">
     </iframe>
-  </div>
 </ion-content>
