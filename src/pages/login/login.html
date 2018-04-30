@@ -7,16 +7,19 @@
 </ion-header>
 
 <ion-content padding>
-
+  
+  <div class="login">   
     <ion-item>
+      <ion-label floating> Email Address </ion-label> 
       <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
     </ion-item>
 
     <ion-item>
+      <ion-label floating> Password </ion-label> 
       <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
     </ion-item>
+  </div>
 
   <button ion-button class="btn-color" full (click)="doLogin()">Login</button>
-
 
 </ion-content>
