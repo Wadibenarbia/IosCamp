@@ -23,15 +23,13 @@ export class LoginPage {
               private storage: Storage) {
   }
 
-  getAuth()
-  {
-
-  }
-
   doLogin(){
     if (this.email.value || this.password.value) 
     {
-      this.authServiceProvider.getAuth(this.email.value, this.password.value)
+      let data = {
+        "email": this.email.value
+      }
+      this.authServiceProvider.postAuth(data)
         .then(data => {
           if (data["Result"] == 0) {
             this.navCtrl.push(TabsPage);
