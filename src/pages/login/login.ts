@@ -33,7 +33,7 @@ export class LoginPage {
     {
       this.authServiceProvider.getAuth(this.email.value, this.password.value)
         .then(data => {
-          if (data.Result == 0) {
+          if (data["Result"] == 0) {
             this.navCtrl.push(TabsPage);
             let alert = this.alertCtrl.create({
               title: "Login Successful",
