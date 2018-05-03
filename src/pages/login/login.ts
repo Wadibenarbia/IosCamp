@@ -42,6 +42,7 @@ export class LoginPage {
             });
             alert.present();
             this.storage.set('connected', 'true');
+            this.storage.set('email', this.email.value);
             this.navCtrl.push(AboutPage);
           }
           else {
