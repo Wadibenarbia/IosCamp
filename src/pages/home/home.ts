@@ -4,7 +4,6 @@ import { LoginPage } from '../login/login';
 import { SplashScreen } from "@ionic-native/splash-screen";
 
 
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -17,6 +16,6 @@ export class HomePage {
 
   login() {
     this.navCtrl.push(LoginPage);
-  }
+  } 
 
 }
