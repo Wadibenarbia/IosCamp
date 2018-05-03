@@ -1,7 +1,38 @@
-#sep {
-    margin-top: 15px;
+.header {
+  background-color: #1BA39C;
 }
 
-#coloricon {
-    color: #1BA39C;
+#profil_top {
+    background: url(../../assets/imgs/background_profil.jpg) no-repeat;
+    background-size: 100%;
 }
+#profil_top .item {
+  background: transparent;
+  border-bottom: none;
+}
+
+
+#header_profil {
+    text-align: center;
+    padding-top: 5%;
+}
+
+#avatar {
+    width: 100px;
+    height: 100px;
+    img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+#primary_info {
+    display: block;
+    color: snow;
+}
+
+#slider {
+    margin-top: -20px;
+    height: 200px;
+}
+

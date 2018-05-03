@@ -31,8 +31,9 @@ ion-fab[top][edge] {
 }
 
 .header {
-    background-color: #1BA39C;
+  background-color: #1BA39C;
 }
+
 
 .logo {
   display: block;
@@ -48,10 +49,3 @@ ion-fab[top][edge] {
 .scroll-content {
   overflow-y: hidden;
 }
-
-#bot {
-  margin-top: -105px;
-  width: 100%;
-  height: calc( 100% + 105px);
-}
-
