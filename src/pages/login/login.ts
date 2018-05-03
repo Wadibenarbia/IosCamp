@@ -5,6 +5,7 @@ import { TabsPage } from '../tabs/tabs';
 import { AboutPage } from '../about/about';
 import { Headers } from '@angular/http';
 import { HttpClientModule } from "@angular/common/http";
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -16,7 +17,10 @@ export class LoginPage {
   @ViewChild('email') email;
   @ViewChild('password') password;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , public alertCtrl : AlertController , public authServiceProvider: AuthServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+              public alertCtrl : AlertController, 
+              public authServiceProvider: AuthServiceProvider,
+              private storage: Storage) {
   }
 
   getAuth()
@@ -25,12 +29,10 @@ export class LoginPage {
   }
 
   doLogin(){
-    if(this.email.value || this.password.value) 
+    if (this.email.value || this.password.value) 
     {
       this.authServiceProvider.getAuth(this.email.value, this.password.value)
         .then(data => {
-          console.log(data);
-          console.log("email: " + this.email.value, "password: " + this.password.value)
           if (data.Result == 0) {
             this.navCtrl.push(TabsPage);
             let alert = this.alertCtrl.create({
@@ -39,6 +41,7 @@ export class LoginPage {
               buttons: ["OK"]
             });
             alert.present();
+            this.storage.set('connected', 'true');
             this.navCtrl.push(AboutPage);
           }
           else {
