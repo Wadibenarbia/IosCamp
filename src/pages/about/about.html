@@ -1,46 +1,26 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Profil
-    </ion-title>
-  </ion-navbar>
+<ion-header class="header">
+   <img class="logo" src="../../assets/imgs/nutriBot_logoPNG.png">
 </ion-header>
-
 <ion-content>
+  <div id="profil_top">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-avatar id="header_profil">
+            <ion-img id="avatar" src="../../assets/imgs/default_avatar2.png"></ion-img>
+        </ion-avatar>
+      </ion-item>
+      <ion-item id="primary_info" text-center>
+        <ion-label>JOHN TONITI</ion-label>
+        <ion-label>22 ans</ion-label>
+      </ion-item>
+    </ion-list>
+</div>
+<div id="slider">
+    <ion-slides pager="true">
+      <ion-slide *ngFor="let slide of slider">
+        <img [src]="slide.image"/>
+      </ion-slide>
+    </ion-slides>
+</div>
 
-  <ion-list>
-    <ion-item id="sep">
-      <ion-label><ion-icon id="coloricon" name="contact"></ion-icon> First Name : </ion-label>
-    </ion-item>
-   
-    <ion-item id="sep">
-      <ion-label><ion-icon id="coloricon" name="contact"></ion-icon> Last Name : </ion-label>
-    </ion-item>
 
-    <ion-item id="sep">
-        <ion-label><ion-icon id="coloricon" name="at"></ion-icon> Mail Adress :</ion-label>
-    </ion-item>
-
-    <ion-item id="sep">
-      <ion-label><ion-icon id="coloricon" name="egg"></ion-icon> Age :  </ion-label>
-    </ion-item>
-
-    <ion-item id="sep">
-      <ion-label><ion-icon id="coloricon" name="md-body"></ion-icon> Weight :  </ion-label>
-    </ion-item>
-
-    <ion-item id="sep">
-      <ion-label><ion-icon id="coloricon" name="man"></ion-icon> Height :  </ion-label>
-    </ion-item>
-
-    <ion-item id="sep">
-      <ion-label><ion-icon id="coloricon" name="star"></ion-icon> Objectif :  </ion-label>
-    </ion-item>
-
-    <ion-item id="sep">
-      <ion-label><ion-icon id="coloricon" name="calendar"></ion-icon> Creation day : </ion-label>
-    </ion-item>
-  </ion-list>
-
-  
-</ion-content>
