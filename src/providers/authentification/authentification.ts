@@ -1,15 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 
-let apiUrl = 'http://54.38.32.140:5000/'
 
 @Injectable()
 export class AuthServiceProvider {
-
-  constructor(public http: HttpClientModule) {}
+  apiUrl = 'http://54.38.32.140:5000'
+  constructor(public http: HttpClient) {}
   
-    post(credentials, apiUrl){
-
+    getAuth(email, password) {
+      return new Promise(resolve => {
+        this.http.get(this.apiUrl + '/connect/' + email + '/' + password + '/').subscribe(data => {
+          resolve(data);
+        }, err => {
+          console.log(err);
+        });
+      });
     }
+
+
   }
   

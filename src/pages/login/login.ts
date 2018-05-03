@@ -19,37 +19,46 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams , public alertCtrl : AlertController , public authServiceProvider: AuthServiceProvider) {
   }
 
+  getAuth()
+  {
+
+  }
+
   doLogin(){
-    if(this.email.value || this.password.value){
-     let Res = this.authServiceProvider.post({}, 'connect/' + this.email.value + '/' + this.password.value + '/')
-     if (Res['result'] == 0) {
-          this.navCtrl.push(TabsPage);
-           let alert = this.alertCtrl.create({
-           title: "Login Successful",
-           subTitle: "You are logged in",
-           buttons: ["OK"]
-           });
-         alert.present();
-        this.navCtrl.push(AboutPage);
-        }
-        else{
-         let alert = this.alertCtrl.create({
-         title: "Error",
-         subTitle: "Incorrect email or password",
-        buttons: ["OK"]
+    if(this.email.value || this.password.value) 
+    {
+      this.authServiceProvider.getAuth(this.email.value, this.password.value)
+        .then(data => {
+          console.log(data);
+          console.log("email: " + this.email.value, "password: " + this.password.value)
+          if (data.Result == 0) {
+            this.navCtrl.push(TabsPage);
+            let alert = this.alertCtrl.create({
+              title: "Login Successful",
+              subTitle: "You are logged in",
+              buttons: ["OK"]
+            });
+            alert.present();
+            this.navCtrl.push(AboutPage);
+          }
+          else {
+            let alert = this.alertCtrl.create({
+              title: "Error",
+              subTitle: "Incorrect email or password",
+              buttons: ["OK"]
+            });
+            alert.present();
+          }
+        });
+    }
+    else
+    {
+        let alert = this.alertCtrl.create({
+          title: "Error",
+          subTitle: "Manquant",
+          buttons: ["OK"]
       });
       alert.present();
-    }
-    console.log(this.email.value, this.password.value)
-    console.log(Res)
-  }
-    else{
-      let alert = this.alertCtrl.create({
-        title: "Error",
-        subTitle: "Manquant",
-       buttons: ["OK"]
-     });
-     alert.present();
     }
 }
 
